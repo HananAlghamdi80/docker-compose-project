@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "6001:6001"  # تغيير المنفذ إلى 6001
+    environment:
+      - REDIS_HOST=redis  # تعيين مضيف Redis من الخدمة redis
+  redis:
+    image: "redis"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
