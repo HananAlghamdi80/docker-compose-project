@@ -8,3 +8,5 @@ This project is a simple Flask web application connected to Redis to count the n
 
 ```bash
 docker-compose up --build
+
+![Project Screenshot](https://github.com/HananAlghamdi80/docker-compose-project/blob/master/Screenshot%202024-10-04%20142650.png?raw=true)
