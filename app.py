@@ -4,13 +4,11 @@ import os
 
 app = Flask(__name__)
 
-# الاتصال بـ Redis باستخدام متغير بيئي لتحديد المضيف
 cache = redis.Redis(host=os.environ.get('REDIS_HOST', 'localhost'), port=6379)
 
 @app.route('/')
 def home():
     try:
-        # زيادة عدد الزيارات المخزنة في Redis
         count = cache.incr('hits')
     except redis.exceptions.ConnectionError as e:
         count = f"Error: {e}"
